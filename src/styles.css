@@ -67,8 +67,27 @@ h1 {
 
 .formConatiner {
   height: 100%;
-	background: peru;
 	border-radius: 10px 0 0 10px;
+  display: grid;
+  grid-template-rows: 50px auto;
+}
+
+.formHeaderContainer {
+  width: 50%;
+  height: 100%;
+  padding-left: 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.link {
+  color: #979797;
+  text-decoration: none;
+}
+
+.active {
+  color: #5a1094;
 }
 
 .orderContainer {
@@ -77,4 +96,9 @@ h1 {
   border-radius: 0 10px 10px 0;
   display: grid;
   grid-template-rows: 50px auto 50px;
+}
+
+.form {
+  display: grid;
+  grid-template-rows: 50px repeat(4, auto);
 }

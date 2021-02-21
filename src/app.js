@@ -6,7 +6,7 @@ export default () => {
   const state = {
     orderSummary: orderData,
     form: {
-      step: 'shipping',
+      step: '',
       process: 'filling',
       valid: false,
       errors: [],
@@ -48,4 +48,6 @@ export default () => {
   console.log('STATE', state);
 
   watch(state);
+
+  state.form.step = 'shipping';
 };

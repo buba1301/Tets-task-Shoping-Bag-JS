@@ -1,0 +1,97 @@
+.formHeader {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+
+	height: 50px;
+	padding-left: 30px;
+	color: #5a1094;
+
+	font-size: 26px;
+}
+
+.contactContainer {
+	width: 320px;
+	height: 114px;
+	display: grid;
+	grid-template-rows: repeat(3, auto);
+	padding-left: 30px;
+}
+
+.nameInput {
+	width: 320px;
+	height: 40px;
+	border-radius: 5px;
+}
+
+.phoneContainer {
+	width: 270px;
+	height: 40px;
+
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.phoneInput {
+	width: 180px;
+	height: 40px;
+	border-radius: 5px;
+}
+
+.adressContainer {
+	width: 320px;
+	height: 247px;
+	padding-left: 30px;
+	grid-template-rows: repeat(3, auto);
+}
+
+.adressInfo {
+  height: 115px;
+	display: grid;
+	grid-template-rows: repeat(2, auto);
+}
+
+.streetInput {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: flex-start;
+
+	width: 320px;
+	height: 40px;
+	border-radius: 5px;
+}
+
+.apartInput {
+	width: 320px;
+	height: 40px;
+	border-radius: 5px;
+}
+
+.cityInput {
+	width: 320px;
+	height: 40px;
+	border-radius: 5px;
+}
+
+.counrtyZipContainer {
+	width: 320px;
+	height: 40px;
+
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.country {
+	width: 180px;
+	height: 40px;
+	border-radius: 5px;
+}
+
+.zip {
+	width: 120px;
+	height: 40px;
+	border-radius: 5px;
+}
