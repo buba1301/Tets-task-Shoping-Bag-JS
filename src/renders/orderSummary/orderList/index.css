@@ -1,0 +1,109 @@
+.orderRoot {
+  height: 497px;
+}
+
+.itemRoot {
+  display: grid;
+  grid-template-columns: 55px auto 40px;
+  height: 70px;
+  background: red;
+  border-bottom: 1px solid #979797;
+  margin-left: 5px;
+  margin-right: 10px;
+}
+
+.imageContainer {
+  background: blue;
+}
+
+.infoContainer {
+  background: #e3e3e3;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  padding-left: 10px;
+}
+
+.itemName {
+    font-size: 13px;
+    font-style: normal;
+    font-weight: normal;
+    color: #777879;
+	}
+
+.itemColor {
+    font-size: 11px;
+    font-style: normal;
+    font-weight: normal;
+    color: #2b2525;
+	}
+
+.itemQuantity {
+	font-size: 11px;
+  font-style: normal;
+  font-weight: normal;
+  color: #2b2525;
+}
+
+.costContainer {
+  background: #e3e3e3;
+
+
+}
+
+.costContainer p {
+    position: relative;
+    left: 35%;
+    top: 10%;
+    font-size: 13px;
+    font-style: normal;
+    font-weight: normal;
+    color: #777879;
+  }
+
+.totalContainerRoot {
+  display: grid;
+  grid-template-rows: 70px auto;
+  margin-left: 5px;
+  margin-right: 10px;
+}
+
+.totalInfoContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  border-bottom: 1px solid #979797;
+}
+
+.expenceContainer {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+.expenceContainer p {
+    font-size: 13px;
+    font-style: normal;
+    font-weight: normal;
+    color: #777879;
+  }
+
+.expenceItem {
+  width: 80%;
+}
+
+.value {
+}
+
+.total {
+  height: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}

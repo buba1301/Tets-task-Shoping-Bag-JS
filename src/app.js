@@ -1,13 +1,15 @@
+import orderData from './orderData';
+
+import watch from './watchers';
+
 export default () => {
   const state = {
+    orderSummary: orderData,
     form: {
       step: 'shipping',
       process: 'filling',
       valid: false,
       errors: [],
-      orderSummery: {
-        items: {},
-      },
       shipingInfo: {
         recipient: {
           name: '',
