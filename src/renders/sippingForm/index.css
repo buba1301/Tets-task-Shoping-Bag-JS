@@ -39,6 +39,10 @@
 	border-radius: 5px;
 }
 
+.phoneLabel {
+	font-size: 12px;
+}
+
 .adressContainer {
 	width: 320px;
 	height: 247px;
@@ -51,6 +55,8 @@
 	display: grid;
 	grid-template-rows: repeat(2, auto);
 }
+
+
 
 .streetInput {
 	display: flex;

@@ -1,83 +1,44 @@
 import './index.css';
 
-const renderShippingForm = () => {
+const renderShippingForm = (data) => {
   const formEl = document.querySelector('.form');
-  console.log('FORM', formEl);
 
-  const formHeaderElem = document.createElement('div');
-  const formHeaderText = document.createTextNode('Shiping Info');
-  formHeaderElem.classList.add('formHeader');
-  formHeaderElem.appendChild(formHeaderText);
+  const html = `
+	<div class="col-md-12">
+    <label for="name" class="form-label">Recipient</label>
+    <input type="text" class="form-control inputName" name="name" id="name" placeholder="Full Name" value=''>
+  </div>
 
-  formEl.appendChild(formHeaderElem);
+  <div class="col-sm-7">
+    <input type="email" class="form-control inputEmail" name="email" id="email" placeholder="Daytime Phone" value=''>
+  </div>
+	<label for="email" class="col-sm-5 col-form-label phoneLabel">For Delivary quistions only</label>
 
-  const contactContainer = document.createElement('div');
-  contactContainer.classList.add('contactContainer');
+  <div class="col-12">
+    <label for="street" class="form-label">Address</label>
+    <input type="text" class="form-control street" name="street" id="street" placeholder="1234 Main St" value=''>
+  </div>
+  <div class="col-12">
+    <input type="text" class="form-control optional" name="optional" id="optional" placeholder="Apartment, studio, or floor" value=''>
+  </div>
 
-  const labelNameEl = document.createElement('label');
-  const labelNameText = document.createTextNode('Recipient');
-  labelNameEl.setAttribute('for', 'name');
-  labelNameEl.appendChild(labelNameText);
+	<div class="col-md-12">
+    <input type="text" class="form-control city" name="city" id="city" placeholder="City" value=''>
+  </div>
 
-  const nameInputEl = document.createElement('input');
-  nameInputEl.classList.add('nameInput');
-  nameInputEl.setAttribute('type', 'text');
-  nameInputEl.setAttribute('placeholder', 'Full Name');
-  nameInputEl.id = 'name';
+  <div class="col-md-8">
+    <input type="text" class="form-control" name="country" id="country" placeholder="Contry" value=''>
+  </div>
 
-  contactContainer.appendChild(labelNameEl);
-  contactContainer.appendChild(nameInputEl);
-  formEl.appendChild(contactContainer);
+  <div class="col-md-4">
+    <input type="text" class="form-control zip" name="zip" id="zip" placeholder="ZIP" value=''>
+  </div>
 
-  const phoneContainerEl = document.createElement('div');
-  phoneContainerEl.classList.add('phoneContainer');
+  <div class="col-6">
+    <button type="submit" class="btn btn-primary submitButton" disabled>Sign in</button>
+  </div>`;
 
-  const phoneInputEl = document.createElement('input');
-  phoneInputEl.classList.add('phoneInput');
-  phoneInputEl.setAttribute('type', 'text');
-  phoneInputEl.setAttribute('placeholder', 'Daytime Phone');
-  phoneInputEl.id = 'phone';
-
-  const phoneLabelEl = document.createElement('label');
-  const phoneLabelText = document.createTextNode('For delivery qustions only');
-  phoneLabelEl.setAttribute('for', 'phone');
-  phoneLabelEl.appendChild(phoneLabelText);
-
-  phoneContainerEl.appendChild(phoneInputEl);
-  phoneContainerEl.appendChild(phoneLabelEl);
-
-  contactContainer.appendChild(phoneContainerEl);
-
-  const adressContainerEl = document.createElement('div');
-  adressContainerEl.classList.add('adressContainer');
-
-  formEl.appendChild(adressContainerEl);
-
-  const adressInfoEl = document.createElement('div');
-  adressInfoEl.classList.add('adressInfo');
-
-  const streetLabelEl = document.createElement('label');
-  const streetLabeText = document.createTextNode('Address');
-  streetLabelEl.setAttribute('for', 'street');
-  streetLabelEl.appendChild(streetLabeText);
-
-  const streetInputEl = document.createElement('input');
-  streetInputEl.classList.add('streetInput');
-  streetInputEl.setAttribute('type', 'text');
-  streetInputEl.setAttribute('placeholder', 'Street Address');
-  streetInputEl.id = 'street';
-
-  adressInfoEl.appendChild(streetLabelEl);
-  adressInfoEl.appendChild(streetInputEl);
-
-  const aprtInputEl = document.createElement('input');
-  aprtInputEl.classList.add('apartInput');
-  aprtInputEl.setAttribute('type', 'text');
-  aprtInputEl.setAttribute('placeholder', 'Apt, Suite, Bldg, Gate Code. (optional)');
-
-  adressInfoEl.appendChild(aprtInputEl);
-
-  adressContainerEl.appendChild(adressInfoEl);
+  formEl.innerHTML = html;
 };
 
 export default renderShippingForm;
