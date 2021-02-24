@@ -1,3 +1,7 @@
+import BagImg from './assets/Bag.png';
+import BackPackImg from './assets/Backpack.png';
+import ShoesImg from './assets/Shoes.png';
+
 const orderData = [
   {
     id: 1,
@@ -5,7 +9,7 @@ const orderData = [
     color: 'Black',
     currancy: 'usd',
     cost: 235,
-    img: '',
+    img: BagImg,
     quantity: 1,
   },
   {
@@ -14,7 +18,7 @@ const orderData = [
     color: 'Reverse Denim + Black Leather',
     currancy: 'usd',
     cost: 65,
-    img: '',
+    img: BackPackImg,
     quantity: 1,
   },
   {
@@ -23,7 +27,7 @@ const orderData = [
     color: 'Reverse Denim + Black Leather',
     currancy: 'usd',
     cost: 48,
-    img: '',
+    img: ShoesImg,
     quantity: 1,
   },
 ];

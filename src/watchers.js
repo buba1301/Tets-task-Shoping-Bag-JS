@@ -23,7 +23,6 @@ export default (state) => {
       case 'payment':
         renders('renderPaymentForm', step);
         listeners('payment', state);
-        console.log('PAYMENT');
         break;
       default:
         console.log('ERROR');
@@ -37,7 +36,6 @@ export default (state) => {
 
   watch(form, 'billing', () => {
     const { billing } = form;
-    console.log('WATCH', billing);
 
     const elementsName = Object.keys(billing);
 

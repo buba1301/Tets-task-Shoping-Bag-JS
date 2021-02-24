@@ -45,6 +45,12 @@ const orderList = (orderData) => {
     const imageContainerEl = document.createElement('div');
     imageContainerEl.classList.add('imageContainer');
 
+    const imgEl = new Image();
+    imgEl.src = img;
+    imgEl.alt = name;
+
+    imageContainerEl.appendChild(imgEl);
+
     itemRootEl.appendChild(imageContainerEl);
 
     const infoContainerEl = document.createElement('div');
@@ -77,7 +83,7 @@ const orderList = (orderData) => {
     itemRootEl.appendChild(costContainerEl);
 
     const costEl = document.createElement('p');
-    const costTextEL = document.createTextNode(cost);
+    const costTextEL = document.createTextNode(`$${cost}`);
 
     costEl.appendChild(costTextEL);
     costContainerEl.appendChild(costEl);

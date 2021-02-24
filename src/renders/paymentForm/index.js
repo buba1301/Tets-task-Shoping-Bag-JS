@@ -29,7 +29,7 @@ const renderPaymentForm = (step) => {
     </div>
 		<div class="col-md-12">
       <label for="number" class="form-label">Card Number</label>
-      <input type="text" class="form-control number" name="name" id="number" placeholder="XXXX XXXX XXXX XXXX" value='' required>
+      <input type="text"  class="form-control number" name="name" id="number" placeholder="XXXX XXXX XXXX XXXX" value='' required>
     </div>
 
 		<div class="row backSideContainer">
