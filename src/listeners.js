@@ -7,6 +7,7 @@ const addFormEventListners = (state, step) => {
 
   const handleChange = ({ target }) => {
     state.form[step][target.id] = target.value;
+    console.log('WORK');
 
     updateValidationState(target.id, state.form, step);
   };

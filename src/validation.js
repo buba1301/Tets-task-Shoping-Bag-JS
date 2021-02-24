@@ -38,6 +38,8 @@ const updateValidationState = (key, state, step) => {
   try {
     validate(key, state[step][key]);
     state.errors = state.errors.filter(([errorName]) => errorName !== key);
+    console.log('ERRORS LENGTH', state.errors.length);
+
     state.valid = state.errors.length === 0;
   } catch (err) {
     state.valid = false;

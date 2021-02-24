@@ -40,8 +40,8 @@ export default () => {
   const form = document.querySelector('.form');
 
   watch(state);
-
-  state.form.step = 'payment';
+  console.log('APP', state);
+  state.form.step = 'shipping';
 
   form.addEventListener('submit', (e) => {
     e.preventDefault();

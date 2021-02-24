@@ -53,18 +53,15 @@ h1 {
   display: flex;
   justify-content: center;
 	padding-top: 50px;
-	border-radius: 10px 0 0 10px;
-
+  background: #979797;
 }
 
 .sectionRoot {
-  display: grid;
-  grid-template-columns: minmax(200px, 60%) minmax(200px, 40%);
   width: 700px;
-	height: 597px;
+	height: 580px;
+  display: grid;
+  grid-template-columns: minmax(200px, auto) minmax(200px, auto);
 	border-radius: 10px 0 0 10px;
-
-  border: 1px solid #979797;
 }
 
 .formConatiner {
@@ -72,9 +69,10 @@ h1 {
 	border-radius: 10px 0 0 10px;
   display: grid;
   grid-template-rows: 50px 50px auto;
-  grid-gap: 1rem;
+  grid-gap: 0.5rem;
   justify-content: center;
   box-shadow: 4px 4px 4px rgba(33, 33, 33, 0.1);
+  background: #FFFFFF;
 }
 
 .formHeaderContainer {

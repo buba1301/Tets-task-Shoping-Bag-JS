@@ -6,6 +6,7 @@ const renderPaymentForm = (step) => {
   const activeStepEl = document.querySelector('.active');
   const formNameEl = document.querySelector('.formName');
   const formEl = document.querySelector('.form');
+  formEl.classList.add('formPayment');
 
   let formNameLeft = formNameEl.firstChild;
   formNameLeft && formNameLeft.remove();

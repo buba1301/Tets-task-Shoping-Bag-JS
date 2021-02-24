@@ -58,14 +58,9 @@
 
 .costContainer {
   background: #e3e3e3;
-
-
 }
 
 .costContainer p {
-    position: relative;
-    left: 35%;
-    top: 10%;
     font-size: 13px;
     font-style: normal;
     font-weight: normal;

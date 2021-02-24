@@ -38,7 +38,7 @@ const orderList = (orderData) => {
   const ordeRootEl = document.createElement('div');
   ordeRootEl.classList.add('orderRoot');
 
-  orderData.forEach(({ name, color, currancy, cost, img, quantity }) => {
+  orderData.forEach(({ name, color, cost, img, quantity }) => {
     const itemRootEl = document.createElement('div');
     itemRootEl.classList.add('itemRoot');
 
@@ -102,6 +102,8 @@ const orderList = (orderData) => {
   const totalData = getTotalOrderSum(orderData);
 
   totalData.detailedСost.forEach(({ expenceItem, value }) => {
+    const sum = value === 'Free' ? value : `$${value}`;
+
     const expenceContainerEl = document.createElement('div');
     expenceContainerEl.classList.add('expenceContainer');
 
@@ -111,7 +113,7 @@ const orderList = (orderData) => {
     expenceItemEl.appendChild(expenceItemText);
 
     const expenceValueEl = document.createElement('p');
-    const expenceValueText = document.createTextNode(value);
+    const expenceValueText = document.createTextNode(sum);
     expenceValueEl.appendChild(expenceValueText);
 
     expenceContainerEl.appendChild(expenceItemEl);
