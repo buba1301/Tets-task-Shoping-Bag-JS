@@ -10,6 +10,12 @@ const phoneSchema = (data) => yup.string().min(11).validateSync(data);
 const addressSchema = (data) => yup.string().required().validateSync(data);
 const zipSchema = (data) => yup.string().required().min(6).validateSync(data);
 
+const cardSchema = (data) => yup.string().required().min(16).max(16).validateSync(data);
+
+const expireDateSchema = (data) => yup.string().required().validateSync(data);
+
+const secureCodeSchema = (data) => yup.string().required().min(3).validateSync(data);
+
 const valudateSchemas = {
   name: nameSchema,
   phone: phoneSchema,
@@ -19,11 +25,16 @@ const valudateSchemas = {
   city: addressSchema,
   country: addressSchema,
   zip: zipSchema,
+  number: cardSchema,
+  expireDate: expireDateSchema,
+  secureCode: secureCodeSchema,
 };
 
 const validate = (schema, data) => valudateSchemas[schema](data);
 
 const updateValidationState = (key, state, step) => {
+  console.log('VALIDATE', key);
+
   try {
     validate(key, state[step][key]);
     state.errors = state.errors.filter(([errorName]) => errorName !== key);

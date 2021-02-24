@@ -22,6 +22,7 @@ export default (state) => {
         break;
       case 'payment':
         renders('renderPaymentForm', step);
+        listeners('payment', state);
         console.log('PAYMENT');
         break;
       default:
