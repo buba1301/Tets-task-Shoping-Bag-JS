@@ -2,7 +2,9 @@ import { watch } from 'melanke-watchjs';
 import listeners from './listeners';
 import renders from './renders';
 
-export default (state) => {
+export default (state, text) => {
+  console.log('!!!!!', state);
+
   const { orderSummary, form } = state;
   const { shipping } = form;
 
@@ -12,11 +14,11 @@ export default (state) => {
     const { step } = form;
     switch (step) {
       case 'shipping':
-        renders('renderShippingBillingForm', step);
+        renders('renderShippingBillingForm', step, text);
         listeners('shipping', state);
         break;
       case 'billing':
-        renders('renderShippingBillingForm', step);
+        renders('renderShippingBillingForm', step, text);
         listeners('billing', state);
         listeners('billingSameAdressButton', state);
         break;

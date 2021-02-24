@@ -1,7 +1,7 @@
 /* eslint-disable no-unused-expressions */
 import './index.css';
 
-const renderShippingBillingForm = (step) => {
+const renderShippingBillingForm = (step, text) => {
   const currentStepEl = document.querySelector(`.${step}`);
   const activeStepEl = document.querySelector('.active');
   const formNameEl = document.querySelector('.formName');
@@ -69,7 +69,7 @@ const renderShippingBillingForm = (step) => {
   </div>
 
   <div class="col-6">
-    <button type="submit" class="btn btn-primary submitButton" disabled>Sign in</button>
+    <button type="submit" class="btn btn-primary submitButton" disabled>${text(`submitButton.${step}`)}</button>
   </div>`;
 
   formEl.innerHTML = html;

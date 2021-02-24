@@ -1,3 +1,5 @@
+import i18next from 'i18next';
+import resources from './locales';
 import orderData from './orderData';
 
 import watch from './watchers';
@@ -39,13 +41,19 @@ export default () => {
 
   const form = document.querySelector('.form');
 
-  watch(state);
-  console.log('APP', state);
-  state.form.step = 'shipping';
+  i18next
+    .init({
+      lng: 'en',
+      debug: true,
+      resources,
+    })
+    .then((t) => {
+      watch(state, t);
+      state.form.step = 'shipping';
+    });
 
   form.addEventListener('submit', (e) => {
     e.preventDefault();
-    // const formData = new FormData(e.target);
 
     const { step } = state.form;
 
