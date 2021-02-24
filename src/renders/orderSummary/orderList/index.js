@@ -1,7 +1,7 @@
 /* eslint-disable no-param-reassign */
 import './index.css';
 
-const getTotolOrderSum = (orderData) => {
+const getTotalOrderSum = (orderData) => {
   const orderSum = orderData.reduce((acc, { cost, quantity }) => {
     acc += cost * quantity;
     return acc;
@@ -93,7 +93,7 @@ const orderList = (orderData) => {
   const totalInfoContainer = document.createElement('div');
   totalInfoContainer.classList.add('totalInfoContainer');
 
-  const totalData = getTotolOrderSum(orderData);
+  const totalData = getTotalOrderSum(orderData);
 
   totalData.detailedСost.forEach(({ expenceItem, value }) => {
     const expenceContainerEl = document.createElement('div');

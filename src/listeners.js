@@ -18,16 +18,15 @@ const addSameAdressButtonListners = (state) => {
   const sameAddressButton = document.querySelector('.sameAddressButton');
 
   sameAddressButton.addEventListener('click', () => {
-    console.log('BUTTON', 'WORK!!!!');
-    console.log('Button State', state);
-
-		// TODO!!!
+    const { form } = state;
+    form.billing = { ...form.billing, ...form.shipping };
   });
 };
 
 const listeners = {
   shipping: addFormEventListners,
   billing: addFormEventListners,
+  payment: addFormEventListners,
   billingSameAdressButton: addSameAdressButtonListners,
 };
 

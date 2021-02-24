@@ -12,15 +12,16 @@ export default (state) => {
     const { step } = form;
     switch (step) {
       case 'shipping':
-        renders('renderForm', step);
+        renders('renderShippingBillingForm', step);
         listeners('shipping', state);
         break;
       case 'billing':
-        renders('renderForm', step);
+        renders('renderShippingBillingForm', step);
         listeners('billing', state);
         listeners('billingSameAdressButton', state);
         break;
       case 'payment':
+        renders('renderPaymentForm', step);
         console.log('PAYMENT');
         break;
       default:
@@ -31,6 +32,19 @@ export default (state) => {
   watch(shipping, ['name', 'phone', 'street', 'optional', 'city', 'country', 'zip'], (prop) => {
     const el = document.querySelector(`.${prop}`);
     el.value = shipping[prop];
+  });
+
+  watch(form, 'billing', () => {
+    const { billing } = form;
+    console.log('WATCH', billing);
+
+    const elementsName = Object.keys(billing);
+
+    elementsName.forEach((item) => {
+      const el = document.querySelector(`.${item}`);
+
+      el.value = billing[item];
+    });
   });
 
   watch(form, 'valid', () => {

@@ -25,12 +25,12 @@ export default () => {
         street: '',
         optional: '',
         city: '',
-        country: '',
+        country: 'Country',
         zip: '',
       },
       payment: {
-        cardholderName: '',
-        cardNumber: '',
+        name: '',
+        number: '',
         expireDate: '',
         secureCode: '',
       },
@@ -41,7 +41,7 @@ export default () => {
 
   watch(state);
 
-  state.form.step = 'shipping';
+  state.form.step = 'payment';
 
   form.addEventListener('submit', (e) => {
     e.preventDefault();

@@ -72,6 +72,7 @@ h1 {
 	border-radius: 10px 0 0 10px;
   display: grid;
   grid-template-rows: 50px 50px auto;
+  grid-gap: 1rem;
   justify-content: center;
   box-shadow: 4px 4px 4px rgba(33, 33, 33, 0.1);
 }

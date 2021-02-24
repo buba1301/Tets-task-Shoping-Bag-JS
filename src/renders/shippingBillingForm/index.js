@@ -1,7 +1,7 @@
 /* eslint-disable no-unused-expressions */
 import './index.css';
 
-const renderShippingForm = (step) => {
+const renderShippingBillingForm = (step) => {
   const currentStepEl = document.querySelector(`.${step}`);
   const activeStepEl = document.querySelector('.active');
   const formNameEl = document.querySelector('.formName');
@@ -32,7 +32,7 @@ const renderShippingForm = (step) => {
     </div>
     <label for="phone" class="col-sm-5 col-form-label phoneLabel">For Delivary quistions only</label>`
       : `<div class="col-sm-12">
-        <input type="email" class="form-control email" name="email" id="email" placeholder="Daytime Phone" value='' required>
+        <input type="email" class="form-control email" name="email" id="email" placeholder="Email" value='' required>
       </div>`;
 
   const html = `
@@ -75,4 +75,4 @@ const renderShippingForm = (step) => {
   formEl.innerHTML = html;
 };
 
-export default renderShippingForm;
+export default renderShippingBillingForm;
