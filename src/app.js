@@ -1,4 +1,3 @@
-import { Form } from 'bootstrap';
 import orderData from './orderData';
 
 import watch from './watchers';
@@ -11,29 +10,23 @@ export default () => {
       process: 'filling',
       valid: false,
       errors: [],
-      shippingInfo: {
+      shipping: {
         name: '',
         phone: '',
-        address: {
-          street: '',
-          optional: '',
-          city: '',
-          country: '',
-          zip: '',
-        },
+        street: '',
+        optional: '',
+        city: '',
+        country: '',
+        zip: '',
       },
-      billingInfo: {
-        contact: {
-          name: '',
-          email: '',
-        },
-        adress: {
-          street: '',
-          optional: '',
-          city: '',
-          country: '',
-          zip: '',
-        },
+      billing: {
+        name: '',
+        email: '',
+        street: '',
+        optional: '',
+        city: '',
+        country: '',
+        zip: '',
       },
       payment: {
         cardholderName: '',
@@ -52,7 +45,7 @@ export default () => {
 
   form.addEventListener('submit', (e) => {
     e.preventDefault();
-    const formData = new FormData(e.target);
+    // const formData = new FormData(e.target);
 
     const { step } = state.form;
 
@@ -62,7 +55,6 @@ export default () => {
         break;
       case 'billing':
         state.form.step = 'payment';
-        console.log('BILLING');
         break;
       case 'payment':
         console.log('PAYMENT');

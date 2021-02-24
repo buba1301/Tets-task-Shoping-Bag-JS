@@ -1,24 +1,24 @@
 import { watch } from 'melanke-watchjs';
 import listeners from './listeners';
 import renders from './renders';
-import getFormInputsElements from './elements';
 
 export default (state) => {
   const { orderSummary, form } = state;
-  const { shippingInfo } = form;
+  const { shipping } = form;
 
   renders('renderOrderSummary', orderSummary);
 
   watch(form, 'step', () => {
-    const { step, shippingInfo } = form;
+    const { step } = form;
     switch (step) {
       case 'shipping':
-        renders('renderShippingForm', shippingInfo);
-        listeners('shippingForm', state);
-        console.log('SIPPING');
+        renders('renderForm', step);
+        listeners('shipping', state);
         break;
       case 'billing':
-        console.log('BILLING');
+        renders('renderForm', step);
+        listeners('billing', state);
+        listeners('billingSameAdressButton', state);
         break;
       case 'payment':
         console.log('PAYMENT');
@@ -28,30 +28,25 @@ export default (state) => {
     }
   });
 
-  watch(shippingInfo, ['name', 'email', 'street', 'optional', 'city', 'country', 'zip'], (prop) => {
-    const { shippingInfo } = form;
-    const formInputs = getFormInputsElements();
-
-    formInputs[prop].value = shippingInfo[prop];
+  watch(shipping, ['name', 'phone', 'street', 'optional', 'city', 'country', 'zip'], (prop) => {
+    const el = document.querySelector(`.${prop}`);
+    el.value = shipping[prop];
   });
 
   watch(form, 'valid', () => {
-    const formInputs = getFormInputsElements();
-    formInputs.submitButton.disabled = !form.valid;
+    const submitButton = document.querySelector('.submitButton');
+    submitButton.disabled = !form.valid;
   });
 
   watch(form, 'errors', () => {
-    const formInputs = getFormInputsElements();
     const { errors } = form;
 
-    if (errors.length === 0) {
-      const elements = document.querySelectorAll('.is-invalid');
+    const elements = document.querySelectorAll('.is-invalid');
 
-      elements.forEach((el) => el.classList.remove('is-invalid'));
-    }
+    elements.forEach((el) => el.classList.remove('is-invalid'));
 
     errors.forEach(([key, value]) => {
-      const el = formInputs[key];
+      const el = document.querySelector(`.${key}`);
       el.classList.add('is-invalid');
       let invalidFeedbackEl = document.querySelector(`.invalid-feedback-${key}`);
 

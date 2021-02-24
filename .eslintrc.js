@@ -6,7 +6,7 @@ module.exports = {
   parser: 'babel-eslint',
   plugins: ['prettier', 'prettier', 'jest', 'babel'],
   rules: {
-    'no-console': 'error',
+    'no-console': 'off',
     'import/extensions': [
       'error',
       'ignorePackages',

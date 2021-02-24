@@ -1,19 +1,34 @@
+/* eslint-disable no-param-reassign */
 import updateValidationState from './validation';
 import getFormInputsElements from './elements';
 
-const addShippingFormEventListners = (state) => {
-  const formInputs = getFormInputsElements();
+const addFormEventListners = (state, step) => {
+  const formInputs = getFormInputsElements(step, state.form);
 
   const handleChange = ({ target }) => {
-    state.form.shippingInfo[target.id] = target.value;
-    updateValidationState(target.id, state.form, state.form.shippingInfo);
+    state.form[step][target.id] = target.value;
+
+    updateValidationState(target.id, state.form, step);
   };
 
-  Object.values(formInputs).forEach((el) => el.addEventListener('input', handleChange));
+  formInputs.forEach((el) => el.addEventListener('input', handleChange));
+};
+
+const addSameAdressButtonListners = (state) => {
+  const sameAddressButton = document.querySelector('.sameAddressButton');
+
+  sameAddressButton.addEventListener('click', () => {
+    console.log('BUTTON', 'WORK!!!!');
+    console.log('Button State', state);
+
+		// TODO!!!
+  });
 };
 
 const listeners = {
-  shippingForm: addShippingFormEventListners,
+  shipping: addFormEventListners,
+  billing: addFormEventListners,
+  billingSameAdressButton: addSameAdressButtonListners,
 };
 
-export default (element, state) => listeners[element](state);
+export default (element, state) => listeners[element](state, element);

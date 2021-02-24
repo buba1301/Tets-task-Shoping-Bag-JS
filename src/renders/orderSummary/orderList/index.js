@@ -1,3 +1,4 @@
+/* eslint-disable no-param-reassign */
 import './index.css';
 
 const getTotolOrderSum = (orderData) => {
@@ -37,7 +38,7 @@ const orderList = (orderData) => {
   const ordeRootEl = document.createElement('div');
   ordeRootEl.classList.add('orderRoot');
 
-  orderData.forEach(({ id, name, color, currancy, cost, img, quantity }) => {
+  orderData.forEach(({ name, color, currancy, cost, img, quantity }) => {
     const itemRootEl = document.createElement('div');
     itemRootEl.classList.add('itemRoot');
 

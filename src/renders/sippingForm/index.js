@@ -1,24 +1,47 @@
+/* eslint-disable no-unused-expressions */
 import './index.css';
-import { Form } from 'bootstrap';
 
-const renderShippingForm = (data) => {
-  console.log('RENDER', data);
-
+const renderShippingForm = (step) => {
+  const currentStepEl = document.querySelector(`.${step}`);
+  const activeStepEl = document.querySelector('.active');
   const formNameEl = document.querySelector('.formName');
   const formEl = document.querySelector('.form');
 
-  formNameEl.innerHTML = 'Shipping Info';
+  let formNameLeft = formNameEl.firstChild;
+  formNameLeft && formNameLeft.remove();
+  formNameLeft = document.createElement('p');
+
+  activeStepEl.classList.remove('active');
+  currentStepEl.classList.add('active');
+
+  formNameLeft.innerHTML = step === 'shipping' ? 'Shipping Info' : 'Billing Info';
+  formNameEl.appendChild(formNameLeft);
+
+  if (step === 'billing') {
+    const sameAddressButtonEl = document.createElement('button');
+    sameAddressButtonEl.classList.add('btn', 'btn-link', 'sameAddressButton');
+    sameAddressButtonEl.innerHTML = 'same as shipping';
+
+    formNameEl.appendChild(sameAddressButtonEl);
+  }
+
+  const telOrEmailInputEl =
+    step === 'shipping'
+      ? `<div class="col-sm-7">
+      <input type="phone" class="form-control phone" name="phone" id="phone" placeholder="Daytime Phone" value='' required>
+    </div>
+    <label for="phone" class="col-sm-5 col-form-label phoneLabel">For Delivary quistions only</label>`
+      : `<div class="col-sm-12">
+        <input type="email" class="form-control email" name="email" id="email" placeholder="Daytime Phone" value='' required>
+      </div>`;
 
   const html = `
 	<div class="col-md-12">
     <label for="name" class="form-label">Recipient</label>
-    <input type="text" class="form-control inputName" name="name" id="name" placeholder="Full Name" value='' required>
+    <input type="text" class="form-control name" name="name" id="name" placeholder="Full Name" value='' required>
   </div>
 
-  <div class="col-sm-7">
-    <input type="email" class="form-control inputEmail" name="email" id="email" placeholder="Daytime Phone" value='' required>
-  </div>
-	<label for="email" class="col-sm-5 col-form-label phoneLabel">For Delivary quistions only</label>
+  ${telOrEmailInputEl}
 
   <div class="col-12">
     <label for="street" class="form-label">Address</label>
@@ -53,7 +76,3 @@ const renderShippingForm = (data) => {
 };
 
 export default renderShippingForm;
-
-/* <div class="col-md-8">
-    <input type="text" class="form-control" name="country" id="country" placeholder="Contry" value='' required>
-  </div> */
