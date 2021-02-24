@@ -54,7 +54,7 @@ h1 {
   justify-content: center;
 	padding-top: 50px;
 	border-radius: 10px 0 0 10px;
-  box-shadow: 4px 4px 4px rgba(33, 33, 33, 0.1);
+
 }
 
 .sectionRoot {
@@ -63,18 +63,21 @@ h1 {
   width: 700px;
 	height: 597px;
 	border-radius: 10px 0 0 10px;
+
+  border: 1px solid #979797;
 }
 
 .formConatiner {
   height: 100%;
 	border-radius: 10px 0 0 10px;
   display: grid;
-  grid-template-rows: 50px auto;
+  grid-template-rows: 50px 50px auto;
   justify-content: center;
+  box-shadow: 4px 4px 4px rgba(33, 33, 33, 0.1);
 }
 
 .formHeaderContainer {
-  width: 50%;
+  width: 80%;
   height: 100%;
   padding-left: 30px;
   display: flex;
@@ -85,6 +88,7 @@ h1 {
 .link {
   color: #979797;
   text-decoration: none;
+  margin: 0;
 }
 
 .active {

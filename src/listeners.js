@@ -1,12 +1,11 @@
 import updateValidationState from './validation';
 import getFormInputsElements from './elements';
 
-const addSipingFormEventListners = (state) => {
+const addShippingFormEventListners = (state) => {
   const formInputs = getFormInputsElements();
 
   const handleChange = ({ target }) => {
     state.form.shippingInfo[target.id] = target.value;
-
     updateValidationState(target.id, state.form, state.form.shippingInfo);
   };
 
@@ -14,7 +13,7 @@ const addSipingFormEventListners = (state) => {
 };
 
 const listeners = {
-  shippingForm: addSipingFormEventListners,
+  shippingForm: addShippingFormEventListners,
 };
 
 export default (element, state) => listeners[element](state);

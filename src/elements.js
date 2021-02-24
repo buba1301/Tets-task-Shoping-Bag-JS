@@ -1,11 +1,12 @@
 export default () => {
   const formInputs = {
-    inputNameElem: document.querySelector('.inputName'),
-    inputEmailElem: document.querySelector('.inputEmail'),
-    inputStreetElem: document.querySelector('.street'),
-    inputOptionalElem: document.querySelector('.optional'),
-    inputCityElem: document.querySelector('.city'),
-    inputZipElem: document.querySelector('.zip'),
+    name: document.querySelector('.inputName'),
+    email: document.querySelector('.inputEmail'),
+    street: document.querySelector('.street'),
+    optional: document.querySelector('.optional'),
+    city: document.querySelector('.city'),
+    country: document.querySelector('.country'),
+    zip: document.querySelector('.zip'),
     submitButton: document.querySelector('.submitButton'),
   };
 

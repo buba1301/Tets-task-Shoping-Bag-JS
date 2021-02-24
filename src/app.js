@@ -10,7 +10,7 @@ export default () => {
       step: '',
       process: 'filling',
       valid: false,
-      errors: {},
+      errors: [],
       shippingInfo: {
         name: '',
         phone: '',
@@ -52,9 +52,23 @@ export default () => {
 
   form.addEventListener('submit', (e) => {
     e.preventDefault();
-    console.log('FORMDATa', e.target);
     const formData = new FormData(e.target);
-    console.log('FORMDATa', formData.get('email'));
+
     const { step } = state.form;
+
+    switch (step) {
+      case 'shipping':
+        state.form.step = 'billing';
+        break;
+      case 'billing':
+        state.form.step = 'payment';
+        console.log('BILLING');
+        break;
+      case 'payment':
+        console.log('PAYMENT');
+        break;
+      default:
+        console.log('ERROR');
+    }
   });
 };

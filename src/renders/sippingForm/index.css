@@ -2,12 +2,35 @@
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-
 	height: 50px;
 	padding-left: 30px;
 	color: #5a1094;
-
 	font-size: 26px;
+}
+
+.formName {
+	width: 100%;
+	height:31px;
+	padding-left: 30px;
+	margin: 0;
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+	font-style: normal;
+	font-size: 26px;
+	font-weight: lighter;
+	line-height: 31px;
+	color: #5a1094;
+	font-family: Helvetica, sans-serif;
+}
+
+.form {
+	color: #5a1094;
+	font-family: Helvetica, sans-serif;
+	font-style: normal;
+	font-size: 16px;
+	font-weight: lighter;
+	line-height: 18px;
 }
 
 .contactContainer {
@@ -56,8 +79,6 @@
 	grid-template-rows: repeat(2, auto);
 }
 
-
-
 .streetInput {
 	display: flex;
 	flex-direction: column;
@@ -90,11 +111,6 @@
 	align-items: center;
 }
 
-.country {
-	width: 180px;
-	height: 40px;
-	border-radius: 5px;
-}
 
 .zip {
 	width: 120px;
