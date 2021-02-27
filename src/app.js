@@ -49,7 +49,7 @@ export default () => {
     })
     .then((t) => {
       watch(state, t);
-      state.form.step = 'shipping';
+      state.form.step = 'payment';
     });
 
   form.addEventListener('submit', (e) => {

@@ -69,7 +69,7 @@ const renderShippingBillingForm = (step, text) => {
   </div>
 
   <div class="col-6">
-    <button type="submit" class="btn btn-primary submitButton" disabled>${text(`submitButton.${step}`)}</button>
+    <button type="submit" class="btn submitButton" disabled>${text(`submitButton.${step}`)}</button>
   </div>`;
 
   formEl.innerHTML = html;

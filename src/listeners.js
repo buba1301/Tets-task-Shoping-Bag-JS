@@ -20,7 +20,16 @@ const addSameAdressButtonListners = (state) => {
 
   sameAddressButton.addEventListener('click', () => {
     const { form } = state;
-    form.billing = { ...form.billing, ...form.shipping };
+    console.log('SAME FROM', Object.entries(form.shipping));
+    const sameForm = Object.entries(form.shipping).reduce((acc, [key, value]) => {
+      console.log('KEY', key, value);
+
+      return key !== 'phone' && { ...acc, [key]: value };
+    }, {});
+
+    console.log('SAME FROM', sameForm);
+
+    form.billing = { ...form.billing, ...sameForm };
   });
 };
 

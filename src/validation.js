@@ -10,7 +10,7 @@ const phoneSchema = (data) => yup.string().min(11).validateSync(data);
 const addressSchema = (data) => yup.string().required().validateSync(data);
 const zipSchema = (data) => yup.string().required().min(6).validateSync(data);
 
-const cardSchema = (data) => yup.string().required().min(16).max(16).validateSync(data);
+const cardSchema = (data) => yup.string().required().min(19).max(19).validateSync(data);
 
 const expireDateSchema = (data) => yup.string().required().validateSync(data);
 

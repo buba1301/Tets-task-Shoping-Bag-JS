@@ -38,18 +38,20 @@ export default (state, text) => {
 
   watch(form, 'billing', () => {
     const { billing } = form;
+    console.log('HELLO');
 
     const elementsName = Object.keys(billing);
-
+    console.log('HELLO', elementsName);
     elementsName.forEach((item) => {
       const el = document.querySelector(`.${item}`);
-
       el.value = billing[item];
     });
   });
 
   watch(form, 'valid', () => {
     const submitButton = document.querySelector('.submitButton');
+    console.log('submitButton', submitButton);
+
     submitButton.disabled = !form.valid;
   });
 

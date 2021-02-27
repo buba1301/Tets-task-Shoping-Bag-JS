@@ -59,7 +59,10 @@
     "@popperjs/core": "^2.8.2",
     "bootstrap": "^4.6.0",
     "i18next": "^19.9.0",
+    "imask": "^6.0.7",
+    "inputmask": "^5.0.5",
     "jquery": "^3.5.1",
+    "jquery-mask-plugin": "^1.14.16",
     "melanke-watchjs": "^1.5.2",
     "popper.js": "^1.16.1",
     "yup": "^0.32.9"
