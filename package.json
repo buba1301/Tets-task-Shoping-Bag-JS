@@ -53,8 +53,7 @@
   "lint-staged": {
     "*.{js,json,css}": [
       "yarn pretty-quick --staged",
-      "npx eslint ./src",
-      "git add"
+      "npx eslint ./src"
     ]
   },
   "dependencies": {
