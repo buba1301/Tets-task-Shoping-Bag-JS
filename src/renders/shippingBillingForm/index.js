@@ -61,16 +61,12 @@ const renderShippingBillingForm = (step, text) => {
 
   <div class="col-md-12">
     <div class="row">
-      <div class="col-md-8 ">
-        <select class="form-select country" id="country" aria-label="Country" required>
-          <option selected>Country</option>
-          <option value="Russia">Russia</option>
-          <option value="England">England</option>
-          <option value="USA">USA</option>
-        </select>
+      <div class="col-md-8 dropup">
+        <span class="fa fa-search form-control-feedback"></span>
+        <input type="text" class="form-control country dropdown-toggle" id="country" placeholder="Country" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+        <div class="dropdown-menu dropDownMenu">
+        </div>
       </div>
-
-
 
       <div class="col-md-4 ">
         <input type="text" class="form-control zip" name="zip" id="zip" placeholder="ZIP" value='' required>
@@ -86,3 +82,10 @@ const renderShippingBillingForm = (step, text) => {
 };
 
 export default renderShippingBillingForm;
+
+/* <select class="form-select country" id="country" aria-label="Country" required>
+          <option selected>Country</option>
+          <option value="Russia">Russia</option>
+          <option value="England">England</option>
+          <option value="USA">USA</option>
+        </select> */

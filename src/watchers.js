@@ -12,6 +12,8 @@ export default (state, text) => {
     console.log(pos);
   });
 
+  console.log('Window', window.location.origin);
+
   renders('renderOrderSummary', orderSummary);
 
   watch(form, 'step', () => {
@@ -38,6 +40,18 @@ export default (state, text) => {
   watch(shipping, ['name', 'phone', 'street', 'optional', 'city', 'country', 'zip'], (prop) => {
     const el = document.querySelector(`.${prop}`);
     el.value = shipping[prop];
+  });
+
+  watch(shipping, 'country', () => {
+    const dropDownMenuEl = document.querySelector('.dropDownMenu');
+    const value = shipping.country;
+
+    if (value === '') {
+      dropDownMenuEl.classList.remove('show');
+    } else {
+      renders('renderCountryList', { parentEl: dropDownMenuEl, value });
+      dropDownMenuEl.classList.add('show');
+    }
   });
 
   watch(form, 'billing', () => {
