@@ -65,10 +65,8 @@ export default () => {
         state.form.step = 'payment';
         break;
       case 'payment':
-        console.log('PAYMENT');
         break;
       default:
-        console.log('ERROR');
     }
   });
 };

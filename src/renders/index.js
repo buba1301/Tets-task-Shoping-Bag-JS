@@ -8,8 +8,4 @@ const renders = {
   renderPaymentForm,
 };
 
-export default (element, data, text) => {
-  console.log('renders', data);
-
-  return renders[element](data, text);
-};
+export default (element, data, text) => renders[element](data, text);

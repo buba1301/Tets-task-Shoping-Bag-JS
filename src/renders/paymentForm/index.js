@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 /* eslint-disable no-unused-expressions */
 import IMask from 'imask';
 import MasterCardLogo from '../../assets/mastercard.png';
@@ -71,7 +72,6 @@ const renderPaymentForm = (step) => {
 
   const expDateMask = new IMask(expDateEl, {
     mask: '00/00',
-    // lazy: false,
   });
 
   const secureCodeMask = new IMask(secureCodeEL, {
