@@ -14,7 +14,7 @@ stylelint:
 	npx stylelint "**/*.scss"
 
 pretty:
-	yarn pretty-quick
+	yarn pretty-quick --staged
 
 test:
 	npx jest --watch
