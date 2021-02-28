@@ -6,6 +6,12 @@ export default (state, text) => {
   const { orderSummary, form } = state;
   const { shipping } = form;
 
+  const geo = navigator.geolocation;
+
+  geo.getCurrentPosition((pos) => {
+    console.log(pos);
+  });
+
   renders('renderOrderSummary', orderSummary);
 
   watch(form, 'step', () => {
