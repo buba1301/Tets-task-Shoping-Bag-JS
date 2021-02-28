@@ -6,7 +6,7 @@ const renderCountryList = ({ parentEl, value }) => {
     const countrySubstr = country.slice(0, value.length);
 
     if (countrySubstr.toLowerCase() === value.toLowerCase()) {
-      const pEL = document.createElement('p');
+      const pEL = document.createElement('div');
       pEL.innerHTML = country;
       parentEl.append(pEL);
     }
