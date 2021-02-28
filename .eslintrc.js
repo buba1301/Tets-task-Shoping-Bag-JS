@@ -1,10 +1,15 @@
 module.exports = {
   env: {
+    es6: true,
     browser: true,
   },
   extends: ['airbnb', 'prettier', 'plugin:jest/recommended'],
   parser: 'babel-eslint',
-  plugins: ['prettier', 'prettier', 'jest', 'babel'],
+  parserOptions: {
+    ecmaVersion: 6,
+    sourceType: 'module',
+  },
+  plugins: ['prettier', 'import', 'jest', 'babel'],
   rules: {
     'no-console': 'off',
     'import/extensions': [
