@@ -52,8 +52,8 @@
   },
   "lint-staged": {
     "src/**/*.{js,json,css}": [
-      "make pretty",
-      "make lint",
+      "yarn pretty-quick --staged",
+      "npx eslint ./src",
       "git add"
     ]
   },
