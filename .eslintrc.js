@@ -3,7 +3,7 @@ module.exports = {
     es6: true,
     browser: true,
   },
-  extends: ['airbnb', 'prettier', 'plugin:jest/recommended'],
+  extends: ['airbnb', 'plugin:jest/recommended'],
   parser: 'babel-eslint',
   parserOptions: {
     ecmaVersion: 6,
