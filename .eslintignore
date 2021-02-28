@@ -4,3 +4,4 @@ public
 .eslintrc.js
 webpack.config.js
 *.css
+yarn-error.log
