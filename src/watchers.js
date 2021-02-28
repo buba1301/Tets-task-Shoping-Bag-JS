@@ -56,16 +56,16 @@ export default (state, text) => {
     const elements = document.querySelectorAll('.is-invalid');
     const cardNumberImgContainerEl = document.querySelector('.ccicon');
 
-    if (errors.length === 0) {
+    if (cardNumberImgContainerEl && errors.length === 0) {
       cardNumberImgContainerEl.classList.remove('inCorrect');
     }
-
+    console.log('KEY', errors);
     elements.forEach((el) => el.classList.remove('is-invalid'));
 
     errors.forEach(([key, value]) => {
       const el = document.querySelector(`.${key}`);
 
-      if (key === 'number') {
+      if (cardNumberImgContainerEl && key === 'number') {
         cardNumberImgContainerEl.classList.add('inCorrect');
       }
 

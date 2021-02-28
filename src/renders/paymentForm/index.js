@@ -10,6 +10,10 @@ const renderPaymentForm = (step) => {
   const activeStepEl = document.querySelector('.active');
   const formNameEl = document.querySelector('.formName');
   const formEl = document.querySelector('.form');
+  const sameAdressButtonEl = document.querySelector('.sameAddressButton');
+
+  sameAdressButtonEl.remove();
+
   formEl.classList.add('formPayment');
   formNameEl.classList.add('formNamePayment');
 
@@ -35,18 +39,18 @@ const renderPaymentForm = (step) => {
     </div>
 		<div class="col-md-12">
       <label for="number" class="form-label">Card Number</label>
-      <input type="text"  class="form-control number masked" name="name" id="number" value='' required pattern="[0-9]*" inputmode="numeric" placeholder="XXX">
+      <input type="tel"  class="form-control number masked" name="name" id="number" value='' required placeholder="XXXX XXXX XXXX XXXX">
 
     </div>
 
 		<div class="row backSideContainer">
       <div class="col-md-5">
 			  <label for="expireDate" class="form-label">Expire Date</label>
-        <input type="text" class="form-control expireDate" name="expireDate" placeholder="MM/YY" id="expireDate" aria-label="expireDate" pattern="[0-9]*" inputmode="numeric">
+        <input type="text" class="form-control expireDate" name="expireDate" placeholder="MM/YY" id="expireDate" aria-label="expireDate" >
       </div>
       <div class="col-md-5">
 			  <label for="secureCode" class="form-label">Secure Code</label>
-        <input type="text" class="form-control secureCode" name="secureCode" id="secureCode" aria-label="secureCode" pattern="[0-9]*" inputmode="numeric" placeholder="XXX">
+        <input type="text" class="form-control secureCode" name="secureCode" id="secureCode" aria-label="secureCode"  placeholder="XXX">
       </div>
     </div>
 
