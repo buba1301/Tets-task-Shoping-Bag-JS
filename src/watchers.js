@@ -59,7 +59,7 @@ export default (state, text) => {
     if (cardNumberImgContainerEl && errors.length === 0) {
       cardNumberImgContainerEl.classList.remove('inCorrect');
     }
-    console.log('KEY', errors);
+
     elements.forEach((el) => el.classList.remove('is-invalid'));
 
     errors.forEach(([key, value]) => {

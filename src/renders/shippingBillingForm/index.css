@@ -11,7 +11,7 @@
 .formName {
 	width: 100%;
 	height:31px;
-	padding-left: 30px;
+
 	display: flex;
 	justify-content: flex-start;
 	align-items: center;
@@ -116,18 +116,25 @@
 	border-radius: 5px;
 }
 
-.counrtyZipContainer {
-	width: 320px;
-	height: 40px;
-
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
+.country {
+  width: 180px;
+  height: 40px;
+	border-color: #979797;
+  border-radius: 5px;
 }
 
+.country option {
+  text-align: center;
+}
+
+.counrtyZipContainer {
+	width: 100%;
+	display: flex;
+	justify-content: space-around;
+}
 
 .zip {
-	width: 120px;
+	width: 80px;
 	height: 40px;
 	border-radius: 5px;
 }

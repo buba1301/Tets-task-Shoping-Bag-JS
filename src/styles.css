@@ -50,7 +50,8 @@ h1 {
 
 .sectionContainer {
 	height: calc(100vh - 50px);
-  display: flex;
+  display: grid;
+  grid-template-columns: 400px 300px;
   justify-content: center;
 	padding-top: 50px;
   background: #979797;
@@ -65,6 +66,7 @@ h1 {
 }
 
 .formConatiner {
+  width: 400px;
   height: 100%;
 	border-radius: 10px 0 0 10px;
   display: grid;
@@ -78,7 +80,7 @@ h1 {
 .formHeaderContainer {
   width: 80%;
   height: 100%;
-  padding-left: 30px;
+
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -107,5 +109,5 @@ h1 {
 .form {
   width: 320px;
   height: 493px;
-  padding-left: 30px;
+
 }

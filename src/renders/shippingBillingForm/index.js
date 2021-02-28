@@ -27,13 +27,15 @@ const renderShippingBillingForm = (step, text) => {
 
   const telOrEmailInputEl =
     step === 'shipping'
-      ? `<div class="col-sm-7">
-      <input type="phone" class="form-control phone" name="phone" id="phone" placeholder="Daytime Phone" value='' required>
-    </div>
-    <label for="phone" class="col-sm-5 col-form-label phoneLabel">For Delivary quistions only</label>`
-      : `<div class="col-sm-12">
-        <input type="email" class="form-control email" name="email" id="email" placeholder="Email" value='' required>
-      </div>`;
+      ? `
+      <div class="row phoneContainer">
+        <div class="col-sm-7">
+        <input type="phone" class="form-control phone" name="phone" id="phone" placeholder="Daytime Phone" value='' required>
+        </div>
+        <label for="phone" class="col-sm-5 col-form-label phoneLabel">For Delivary quistions only</label>
+      </div>`
+      : `
+        <input type="email" class="form-control email" name="email" id="email" placeholder="Email" value='' required>`;
 
   const html = `
 	<div class="col-md-12">
@@ -41,7 +43,9 @@ const renderShippingBillingForm = (step, text) => {
     <input type="text" class="form-control name" name="name" id="name" placeholder="Full Name" value='' required>
   </div>
 
-  ${telOrEmailInputEl}
+  <div class="col-md-12">
+    ${telOrEmailInputEl}
+  </div>
 
   <div class="col-12">
     <label for="street" class="form-label">Address</label>
@@ -51,21 +55,27 @@ const renderShippingBillingForm = (step, text) => {
     <input type="text" class="form-control optional" name="optional" id="optional" placeholder="Apartment, studio, or floor" value='' required>
   </div>
 
-	<div class="col-md-12">
+  <div class="col-md-12">
     <input type="text" class="form-control city" name="city" id="city" placeholder="City" value='' required>
   </div>
 
-  <div class="col-md-6">
-    <select class="form-select country" id="country" aria-label="Country" required>
-      <option selected>Country</option>
-      <option value="Russia">Russia</option>
-      <option value="England">England</option>
-      <option value="USA">USA</option>
-    </select>
-  </div>
+  <div class="col-md-12">
+    <div class="row">
+      <div class="col-md-8 ">
+        <select class="form-select country" id="country" aria-label="Country" required>
+          <option selected>Country</option>
+          <option value="Russia">Russia</option>
+          <option value="England">England</option>
+          <option value="USA">USA</option>
+        </select>
+      </div>
 
-  <div class="col-md-4">
-    <input type="text" class="form-control zip" name="zip" id="zip" placeholder="ZIP" value='' required>
+
+
+      <div class="col-md-4 ">
+        <input type="text" class="form-control zip" name="zip" id="zip" placeholder="ZIP" value='' required>
+      </div>
+    </div>
   </div>
 
   <div class="col-6">
