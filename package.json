@@ -51,7 +51,7 @@
     }
   },
   "lint-staged": {
-    "*.{js,json,css}": [
+    "*.(js|json|css)": [
       "yarn pretty-quick --staged",
       "npx eslint ./src"
     ]
