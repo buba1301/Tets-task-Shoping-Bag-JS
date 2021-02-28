@@ -3,8 +3,6 @@ import listeners from './listeners';
 import renders from './renders';
 
 export default (state, text) => {
-  console.log('!!!!!', state);
-
   const { orderSummary, form } = state;
   const { shipping } = form;
 
@@ -38,10 +36,9 @@ export default (state, text) => {
 
   watch(form, 'billing', () => {
     const { billing } = form;
-    console.log('HELLO');
 
     const elementsName = Object.keys(billing);
-    console.log('HELLO', elementsName);
+
     elementsName.forEach((item) => {
       const el = document.querySelector(`.${item}`);
       el.value = billing[item];
@@ -50,8 +47,6 @@ export default (state, text) => {
 
   watch(form, 'valid', () => {
     const submitButton = document.querySelector('.submitButton');
-    console.log('submitButton', submitButton);
-
     submitButton.disabled = !form.valid;
   });
 
@@ -59,18 +54,27 @@ export default (state, text) => {
     const { errors } = form;
 
     const elements = document.querySelectorAll('.is-invalid');
+    const cardNumberImgContainerEl = document.querySelector('.ccicon');
+
+    if (errors.length === 0) {
+      cardNumberImgContainerEl.classList.remove('inCorrect');
+    }
 
     elements.forEach((el) => el.classList.remove('is-invalid'));
 
     errors.forEach(([key, value]) => {
       const el = document.querySelector(`.${key}`);
+
+      if (key === 'number') {
+        cardNumberImgContainerEl.classList.add('inCorrect');
+      }
+
       el.classList.add('is-invalid');
       let invalidFeedbackEl = document.querySelector(`.invalid-feedback-${key}`);
 
       if (invalidFeedbackEl) {
         invalidFeedbackEl.remove();
       }
-
       invalidFeedbackEl = document.createElement('div');
       invalidFeedbackEl.classList.add('invalid-feedback', `invalid-feedback-${key}`);
       invalidFeedbackEl.innerHTML = value;

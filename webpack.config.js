@@ -30,6 +30,10 @@ module.exports = {
         use: ['style-loader', 'css-loader'],
       },
       {
+        test: /\.svg$/,
+        use: ['url-loader'],
+      },
+      {
         test: [/\.bmp$/, /\.gif$/, /\.jpe?g$/, /\.png$/],
         use: ['url-loader'],
       },

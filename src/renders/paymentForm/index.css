@@ -37,3 +37,23 @@
 	color: aliceblue;
 	cursor: pointer;
 }
+
+.ccicon {
+  height: 38px;
+  position: absolute;
+  right: 6px;
+  top: calc(50% - 17px);
+  width: 60px;
+}
+
+.ccicon img {
+  height: 100%;
+  position: absolute;
+  right: 12px;
+  top: calc(50% - 17px);
+  width: 40px;
+}
+
+.inCorrect {
+	display: none;
+}

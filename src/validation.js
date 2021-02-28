@@ -33,14 +33,11 @@ const valudateSchemas = {
 const validate = (schema, data) => valudateSchemas[schema](data);
 
 const updateValidationState = (key, state, step) => {
-  console.log('VALIDATE', key);
-
   try {
     validate(key, state[step][key]);
     state.errors = state.errors.filter(([errorName]) => errorName !== key);
-    console.log('ERRORS LENGTH', state.errors.length);
-
-    state.valid = state.errors.length === 0;
+    const isFullForm = !Object.values(state[step]).includes('');
+    state.valid = state.errors.length === 0 && isFullForm;
   } catch (err) {
     state.valid = false;
     state.errors = [...state.errors, [key, err.message]];

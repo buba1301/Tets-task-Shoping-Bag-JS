@@ -1,5 +1,7 @@
 /* eslint-disable no-unused-expressions */
 import IMask from 'imask';
+import MasterCardLogo from '../../assets/mastercard.png';
+import VisaLogo from '../../assets/visa.png';
 import './index.css';
 
 const renderPaymentForm = (step) => {
@@ -32,7 +34,8 @@ const renderPaymentForm = (step) => {
     </div>
 		<div class="col-md-12">
       <label for="number" class="form-label">Card Number</label>
-      <input type="text"  class="form-control number masked" name="name" id="number" value='' required pattern="[0-9]*" inputmode="numeric">
+      <input type="text"  class="form-control number masked" name="name" id="number" value='' required pattern="[0-9]*" inputmode="numeric" placeholder="XXX">
+
     </div>
 
 		<div class="row backSideContainer">
@@ -56,13 +59,14 @@ const renderPaymentForm = (step) => {
   const cardNumEl = document.querySelector('.number');
   const expDateEl = document.querySelector('.expireDate');
   const secureCodeEL = document.querySelector('.secureCode');
-  console.log('ELEM', expDateEl);
+  const img = document.createElement('img');
+  const ccicon = document.createElement('div');
+  ccicon.classList.add('ccicon', 'inCorrect');
 
-  const cardNumNask = new IMask(cardNumEl, {
+  const cardNumMask = new IMask(cardNumEl, {
     mask: '0000 0000 0000 0000',
-    regex: '^(5[1-5]\\d{0,2}|22[2-9]\\d{0,1}|2[3-7]\\d{0,2})\\d{0,12}',
-    cardtype: 'mastercard',
-    lazy: false,
+    regex: '^4\\d{0,15}',
+    cardtype: 'visa',
   });
 
   const expDateMask = new IMask(expDateEl, {
@@ -72,6 +76,19 @@ const renderPaymentForm = (step) => {
 
   const secureCodeMask = new IMask(secureCodeEL, {
     mask: '000',
+  });
+
+  cardNumMask.on('accept', () => {
+    switch (cardNumMask.masked.cardtype) {
+      case 'visa':
+        img.src = VisaLogo;
+        ccicon.appendChild(img);
+        cardNumEl.after(ccicon);
+        break;
+      default:
+        img.remove();
+        break;
+    }
   });
 };
 
